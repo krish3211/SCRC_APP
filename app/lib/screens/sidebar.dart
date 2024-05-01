@@ -18,7 +18,7 @@ class SideBar extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.lime[600],
+              color: Colors.white,
             ),
             child: Image.asset(
               'assets/images/logo.png',

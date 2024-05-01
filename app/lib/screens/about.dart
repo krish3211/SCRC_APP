@@ -9,8 +9,16 @@ class About extends StatelessWidget {
     return Scaffold(
       drawer: SideBar(),
       appBar: AppBar(
-        title: Text('About'),
-        backgroundColor: Colors.lime[600],
+        title: Text(
+          'About',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Colors.lightBlue[800],
+        iconTheme: IconThemeData(color: Colors.white),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

@@ -12,8 +12,16 @@ class Summary extends StatelessWidget {
       home: Scaffold(
         drawer: SideBar(),
         appBar: AppBar(
-          title: Text('Summary View'),
-          backgroundColor: Colors.lime[600],
+          title: Text(
+            'Summary View',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          backgroundColor: Colors.lightBlue[800],
+          iconTheme: IconThemeData(color: Colors.white),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
