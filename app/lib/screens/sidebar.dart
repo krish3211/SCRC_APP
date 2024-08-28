@@ -12,53 +12,62 @@ class SideBar extends StatelessWidget {
       // Add a ListView to the drawer. This ensures the user can scroll
       // through the options in the drawer if there isn't enough vertical
       // space to fit everything.
-      child: ListView(
-        // Important: Remove any padding from the ListView.
-        padding: EdgeInsets.zero,
-        children: [
-          DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.white,
+      child: Container(
+        color: Colors.grey[800], // Set the background color of the Drawer
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+              child: Image.asset(
+                'assets/images/logo.png',
+                fit: BoxFit.cover,
+              ),
             ),
-            child: Image.asset(
-              'assets/images/logo.png',
-              fit: BoxFit.cover,
+            ListTile(
+              iconColor: Colors.white,
+              textColor: Colors.white,
+              leading: Icon(Icons.home),
+              title: Center(child: Text('Home')),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home()),
+                );
+              },
             ),
-          ),
-          ListTile(
-            leading: Icon(Icons.home),
-            title: Center(child: Text('Home')),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Home()),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.aod),
-            title: Center(child: Text('About')),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => About()),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.analytics),
-            title: Center(child: Text('Summary')),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Summary()),
-              );
-            },
-          ),
-        ],
+            ListTile(
+              iconColor: Colors.white,
+              textColor: Colors.white,
+              leading: Icon(Icons.aod),
+              title: Center(child: Text('About')),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => About()),
+                );
+              },
+            ),
+            ListTile(
+              iconColor: Colors.white,
+              textColor: Colors.white,
+              leading: Icon(Icons.analytics),
+              title: Center(child: Text('Summary')),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Summary()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
